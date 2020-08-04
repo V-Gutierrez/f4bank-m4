@@ -6,7 +6,6 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.middleware();
         this.routes();
     }
 
@@ -15,8 +14,7 @@ class Server {
 
         this.app.route("/").get((req, res) => {
             res.send({
-                versão:
-                    "0.0.1 - construído por Victor Gutierrez e idealizado por Tiago Adriano",
+                versão: "0.0.1 - construído por Victor Gutierrez",
             });
         });
 
