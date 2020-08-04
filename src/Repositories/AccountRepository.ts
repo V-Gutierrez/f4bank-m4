@@ -1,4 +1,4 @@
-import { IUserAccount } from "../Types/Types";
+import { IUserAccount, IUserTransaction } from "../Types/Types";
 import fs from "fs";
 import { Transaction } from "../Models/TransactionModel";
 import { UserAccount } from "../Models/AccountModel";
@@ -65,7 +65,9 @@ class AccountRepositories {
         }
     }
 
-    public async queryDatabaseForUserBalance(CPF: string): Promise<void> {
+    public async queryDatabaseForUserBalance(
+        CPF: string
+    ): Promise<void | string> {
         const dbQuery = await this.queryDatabase();
         const accountIndex = await this.queryDataBaseAndcheckAccountExistence(
             CPF
@@ -75,6 +77,7 @@ class AccountRepositories {
             console.log(
                 `Olá, ${dbQuery[accountIndex].name} seu saldo é ${dbQuery[accountIndex].balance}`
             );
+            return `Olá, ${dbQuery[accountIndex].name} seu saldo é ${dbQuery[accountIndex].balance}`;
         } else {
             throw new Error("CPF não possui conta atrelada");
         }
@@ -216,27 +219,19 @@ class AccountRepositories {
         }
     }
 
-    public async queryDatabaseForTransactions(CPF: string): Promise<void> {
+    public async queryDatabaseForTransactions(CPF: string): Promise<any> {
         const dbQuery = await this.queryDatabase();
         const accountIndex = await this.queryDataBaseAndcheckAccountExistence(
             CPF
         );
 
         if (accountIndex !== -1) {
-            console.log(
-                "\x1b[36m",
-                "\n\n" +
-                    dbQuery[accountIndex].name +
-                    ", eis a lista das suas transações:\n"
-            );
-            console.log(
-                dbQuery[accountIndex].history.map((transaction) => {
-                    return {
-                        ...transaction,
-                        amount: `R$ ${transaction.amount}`,
-                    };
-                })
-            );
+            return dbQuery[accountIndex].history.map((transaction) => {
+                return {
+                    ...transaction,
+                    amount: `R$ ${transaction.amount}`, 
+                };
+            });
         } else {
             throw new Error("CPF inexistente na base de dados");
         }

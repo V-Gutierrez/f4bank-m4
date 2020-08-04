@@ -23,10 +23,13 @@ class AccountController {
         }
     }
 
-    async checkBalance(CPF: string): Promise<void> {
+    async checkBalance(CPF: string): Promise<void | string> {
         try {
             await validateCPF(CPF);
-            await AccountRepository.queryDatabaseForUserBalance(CPF);
+            const response = await AccountRepository.queryDatabaseForUserBalance(
+                CPF
+            );
+            return response;
         } catch (error) {
             throw new Error(error);
         }
@@ -67,7 +70,7 @@ class AccountController {
         CPF: string,
         value: number,
         description: string,
-        destinationCPF?: string
+        destinationCPF: string
     ): Promise<void> {
         try {
             await validateCPF(CPF);
@@ -83,10 +86,14 @@ class AccountController {
         }
     }
 
-    async seeTransactions(CPF: string): Promise<void> {
+    async seeTransactions(CPF: string) {
         try {
             await validateCPF(CPF);
-            await AccountRepository.queryDatabaseForTransactions(CPF);
+            const response = await AccountRepository.queryDatabaseForTransactions(
+                CPF
+            );
+
+            return response;
         } catch (error) {
             throw new Error(error);
         }
