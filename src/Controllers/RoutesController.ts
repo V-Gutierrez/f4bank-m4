@@ -3,13 +3,16 @@ import AccountController from "./AccountController";
 
 class RoutesController {
     async createaccount(req: Request, res: Response) {
-        const { name, cpf, string } = req.body;
+        const { name, cpf, birthdate } = req.body;
 
         try {
-            await AccountController.createAccount(name, cpf, string);
+            await AccountController.createAccount(name, cpf, birthdate);
             res.status(200).json("Conta criada com sucesso");
         } catch (error) {
-            res.status(401).json(error);
+            res.status(401).json({
+                error: error,
+                status: 401,
+            });
         }
     }
     async checkbalance(req: Request, res: Response) {
@@ -19,7 +22,10 @@ class RoutesController {
             const response = await AccountController.checkBalance(cpf);
             res.json(response).status(200);
         } catch (error) {
-            res.json(error).status(401);
+            res.json({
+                error: error,
+                status: 401,
+            }).status(401);
         }
     }
 
@@ -32,7 +38,10 @@ class RoutesController {
                 `Depósito de R$ ${amount}, para ${cpf} foi feito com sucesso`
             ).status(200);
         } catch (error) {
-            res.json(error).status(401);
+            res.json({
+                error: error,
+                status: 401,
+            }).status(401);
         }
     }
     async paybill(req: Request, res: Response) {
@@ -42,7 +51,10 @@ class RoutesController {
             await AccountController.payBill(cpf, amount, description);
             res.json("Conta paga com sucesso").status(200);
         } catch (error) {
-            res.status(401).json(error);
+            res.status(401).json({
+                error: error,
+                status: 401,
+            });
         }
     }
     async transfer(req: Request, res: Response) {
@@ -56,7 +68,10 @@ class RoutesController {
             );
             res.json("Transferencia realizada com sucesso").status(200);
         } catch (error) {
-            res.status(401).json(error);
+            res.status(401).json({
+                error: error,
+                status: 401,
+            });
         }
     }
     async seeTransactions(req: Request, res: Response) {
@@ -66,7 +81,10 @@ class RoutesController {
             const response = await AccountController.seeTransactions(cpf);
             res.json(response).status(200);
         } catch (error) {
-            res.json(error).status(401);
+            res.json({
+                error: error,
+                status: 401,
+            }).status(401);
         }
     }
 }

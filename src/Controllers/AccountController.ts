@@ -19,7 +19,7 @@ class AccountController {
                 birthdate: birthdate,
             });
         } catch (error) {
-            throw new Error(error);
+            throw "Houve um erro na abertura da conta, cheque seus cadastrais, lembrando que apenas maiores de idade podem criar conta";
         }
     }
 
@@ -31,7 +31,7 @@ class AccountController {
             );
             return response;
         } catch (error) {
-            throw new Error(error);
+            throw "Houve um erro, cheque seus cadastrais";
         }
     }
 
@@ -43,7 +43,7 @@ class AccountController {
                 value: amount,
             });
         } catch (error) {
-            throw new Error(error);
+            throw "Houve um erro no depósito em conta, cheque seus cadastrais";
         }
     }
 
@@ -62,7 +62,7 @@ class AccountController {
                 type: "payment",
             });
         } catch (error) {
-            throw new Error(error);
+            throw "Houve um erro no pagamento da conta, cheque seu saldo e dados cadastrais";
         }
     }
 
@@ -82,7 +82,7 @@ class AccountController {
                 CPF2: destinationCPF,
             });
         } catch (error) {
-            throw new Error(error);
+            throw "Houve um erro na transferência, cheque os dados e o seu saldo e tente novamente";
         }
     }
 
