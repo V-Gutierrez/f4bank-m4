@@ -1,4 +1,4 @@
-import { IUserAccount, IUserTransaction } from "../Types/Types";
+import { IUserAccount } from "../Types/Types";
 import fs from "fs";
 import { Transaction } from "../Models/TransactionModel";
 import { UserAccount } from "../Models/AccountModel";
@@ -10,18 +10,18 @@ class AccountRepositories {
         try {
             return JSON.parse(
                 fs
-                    .readFileSync(__dirname + "/../Database/database.json")
+                    .readFileSync(`${__dirname}/../Database/database.json`)
                     .toString()
             );
         } catch (error) {
             fs.writeFileSync(
-                __dirname + "/../Database/database.json",
+                `${__dirname}/../Database/database.json`,
                 JSON.stringify([])
             );
 
             return JSON.parse(
                 fs
-                    .readFileSync(__dirname + "/../Database/database.json")
+                    .readFileSync(`${__dirname}/../Database/database.json`)
                     .toString()
             );
         }
@@ -29,7 +29,7 @@ class AccountRepositories {
 
     private async insertInDatabase(data: IUserAccount[]): Promise<void> {
         fs.writeFileSync(
-            __dirname + "/../Database/database.json",
+            `${__dirname}/../Database/database.json`,
             JSON.stringify(data, null, 2)
         );
     }
@@ -229,7 +229,7 @@ class AccountRepositories {
             return dbQuery[accountIndex].history.map((transaction) => {
                 return {
                     ...transaction,
-                    amount: `R$ ${transaction.amount}`, 
+                    amount: `R$ ${transaction.amount}`,
                 };
             });
         } else {
