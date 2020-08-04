@@ -26,7 +26,7 @@ class Server {
             .get(RoutesController.checkbalance);
         this.app.route("/f4bank/v1/deposit").post(RoutesController.deposit);
         this.app.route("/f4bank/v1/pay").post(RoutesController.paybill);
-        this.app.route("/f4bank/v1/transfer").get(RoutesController.transfer);
+        this.app.route("/f4bank/v1/transfer").post(RoutesController.transfer);
         this.app
             .route("/f4bank/v1/transactions")
             .get(RoutesController.seeTransactions);
