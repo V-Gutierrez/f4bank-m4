@@ -1,5 +1,6 @@
 import express from "express";
 import RoutesController from "./Controllers/RoutesController";
+import fs from "fs";
 
 class Server {
     public app: express.Application;
@@ -14,7 +15,13 @@ class Server {
 
         this.app.route("/").get((req, res) => {
             res.send({
-                versão: "0.0.1 - construído por Victor Gutierrez",
+                versão:
+                    "0.0.1 - construído por Victor Gutierrez - Feito apenas para fins educativos",
+                virtualDatabase: JSON.parse(
+                    fs
+                        .readFileSync(`${__dirname}/Database/database.json`)
+                        .toString()
+                ),
             });
         });
 

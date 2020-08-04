@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Victor",
+    "CPF": "111.111.111-99",
+    "birthdate": "15/06/1995",
+    "balance": 8666,
+    "history": [
+      {
+        "id": "20bc5339-21bd-4347-9b2e-aeb5f1b50f63",
+        "amount": 2222,
+        "description": "Transferência recebida de Euzébio de Queiróz",
+        "date": "04/08/2020 às 19:32"
+      },
+      {
+        "id": "faba18d9-77ff-48d0-93c5-81ab64ee69ce",
+        "amount": 2222,
+        "description": "Transferência recebida de Euzébio de Queiróz",
+        "date": "04/08/2020 às 19:32"
+      },
+      {
+        "id": "6507048e-b142-4383-b360-7b04832cf84e",
+        "amount": 2222,
+        "description": "Transferência recebida de Euzébio de Queiróz",
+        "date": "04/08/2020 às 19:32"
+      }
+    ]
+  },
+  {
+    "name": "Euzébio de Queiróz",
+    "CPF": "111.111.111-90",
+    "birthdate": "13/12/1998",
+    "balance": 4,
+    "history": [
+      {
+        "id": "7290a206-83b1-40cb-a3ad-61c29036e144",
+        "amount": 2222,
+        "description": "trust issues (enviado para Victor)",
+        "date": "04/08/2020 às 19:32"
+      },
+      {
+        "id": "de04f356-218d-4e82-b3e7-b86873d1393b",
+        "amount": 2222,
+        "description": "trust issues (enviado para Victor)",
+        "date": "04/08/2020 às 19:32"
+      },
+      {
+        "id": "265749a9-33c4-4879-8e32-719840a8c41d",
+        "amount": 2222,
+        "description": "trust issues (enviado para Victor)",
+        "date": "04/08/2020 às 19:32"
+      }
+    ]
+  }
+]

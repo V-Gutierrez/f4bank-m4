@@ -1,5 +1,5 @@
-import { IUserAccount } from "../Types/Types";
 import fs from "fs";
+import { IUserAccount } from "../Types/Types";
 import { Transaction } from "../Models/TransactionModel";
 import { UserAccount } from "../Models/AccountModel";
 
