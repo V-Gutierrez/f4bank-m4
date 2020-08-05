@@ -29,3 +29,17 @@ As instruções são:
 
 Deploy para demonstração
 https://f4bank-proofofconcept.herokuapp.com/
+
+
+## Documentação para testes
+POST  /f4bank/v1/createaccount Corpo da requsição:{name: string, cpf: string em estrutura de CPF (XXX.XXX.XXX-XX), birthdate: string em estrutura de data (DD/MM/YY)}
+
+GET   /f4bank/v1/checkbalance    Corpo da requsição: {cpf: string (XXX.XXX.XXX-XX)}
+
+POST /f4bank/v1/deposit          Corpo da requsição: {cpf: string (XXX.XXX.XXX-XX), amount: number}
+
+POST /f4bank/v1/pay              Corpo da requisição {cpf: string (XXX.XXX.XXX-XX), amount: number, description: string}
+
+POST /f4bank/v1/transfer         Corpo da requisição { cpf:string (XXX.XXX.XXX-XX) , amount: number, description: string, cpfDestination: string (XXX.XXX.XXX-XX) }
+
+GET /f4bank/v1/transactions      Corpo da requsição: {cpf: string (XXX.XXX.XXX-XX)}
