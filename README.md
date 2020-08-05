@@ -34,7 +34,7 @@ https://f4bank-proofofconcept.herokuapp.com/
 ## Documentação para testes 
 <br/>
 
-<h4>POST</h4> <br/> /f4bank/v1/createaccount <i>Corpo da requsição:{name: string, cpf: string em estrutura de CPF (XXX.XXX.XXX-XX), birthdate: string em estrutura de data (DD/MM/YY)}</i>
+<h4>POST</h4> <br/> <b>/f4bank/v1/createaccount</b> <i>Corpo da requsição:{name: string, cpf: string em estrutura de CPF (XXX.XXX.XXX-XX), birthdate: string em estrutura de data (DD/MM/YY)}</i>
 
 <h4>GET</h4>  <br/>      <b>/f4bank/v1/checkbalance</b>    <i>Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX)}</i>
 
