@@ -25,3 +25,7 @@ As instruções são:
 1. `npm run start` para rodar localmente o projeto e receber todas as instruções de uso;
 1. `npm run build` para gerar uma versão possível de ser deployada com
    os arquivos transpilados para Javascript
+## Deploy
+
+Deploy para demonstração
+https://f4bank-proofofconcept.herokuapp.com/
