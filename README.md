@@ -34,12 +34,12 @@ https://f4bank-proofofconcept.herokuapp.com/
 ## Documentação para testes
 POST  /f4bank/v1/createaccount Corpo da requsição:{name: string, cpf: string em estrutura de CPF (XXX.XXX.XXX-XX), birthdate: string em estrutura de data (DD/MM/YY)}
 
-<h4 style="color: green">GET  </h4>        <b>/f4bank/v1/checkbalance</b>    Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX)}
+<h4>GET</h4>        <b>/f4bank/v1/checkbalance</b>    <i>Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX)}</i>
 
-POST        <b>/f4bank/v1/deposit </b>         Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX), amount: number}
+<h4>POST  </h4>      <b>/f4bank/v1/deposit </b>        <i> Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX), amount: number}</i>
 
-POST        <b>/f4bank/v1/pay  </b>            Corpo da requisição {cpf: string (XXX.XXX.XXX-XX), amount: number, description: string}
+<h4>POST </h4>       <b>/f4bank/v1/pay  </b>           <i> Corpo da requisição {cpf: string (XXX.XXX.XXX-XX), amount: number, description: string}</i>
 
-POST        <b>/f4bank/v1/transfer</b>         Corpo da requisição { cpf:string (XXX.XXX.XXX-XX) , amount: number, description: string, cpfDestination: string (XXX.XXX.XXX-XX) }
+<h4>POST </h4>       <b>/f4bank/v1/transfer</b>         <i>Corpo da requisição { cpf:string (XXX.XXX.XXX-XX) , amount: number, description: string</i>, cpfDestination: string (XXX.XXX.XXX-XX) }
 
-GET          <b>/f4bank/v1/transactions  </b>    Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX)}
+<h4>GET </h4>         <b>/f4bank/v1/transactions  </b>    <i>Corpo da requisição: {cpf: string (XXX.XXX.XXX-XX)}</i>
